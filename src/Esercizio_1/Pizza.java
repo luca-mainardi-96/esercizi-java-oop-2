@@ -24,10 +24,33 @@ public class Pizza {
 }
 
 /*
-Crea una classe `Pizza` che permetta di aggiungere ingredienti con metodi come:
-`Pizza aggiungiMozzarella();`, `Pizza aggiungiPomodoro();`, `Pizza aggiungiProsciutto();`
-Ogni metodo deve restituire lo stesso oggetto `Pizza` per permettere catene di chiamate come:
-`Pizza p = new Pizza().aggiungiMozzarella().aggiungiPomodoro();`
-L'obiettivo è far comprendere il concetto di metodi che ritornano `this`, spesso utilizzati in Java
-per implementare il pattern 'fluent interface'.
+import java.util.Collections;
+import.java.util.List;
+
+public class Pizza {
+    private List<String> ingredienti;
+
+    public Pizza(){
+        this.ingredienti = new ArrayList<>();
+    }
+
+    public List<String> getIngredienti(){
+        return Collections.unmodifiableList(this.ingredienti); -------> così si impedisce che il getter possa rompere il codice.
+    }
+
+    public Pizza aggiungiMozzarella(){
+        this.ingredienti.add("Mozzarella");
+        return this;
+    }
+
+    public Pizza aggiungiPomodoro(){
+        this.ingredienti.add("Pomodoro");
+        return this;
+    }
+
+    public Pizza aggiungiProsciutto(){
+        this.ingredienti.add("Prosciutto");
+        return this;
+    }
+}
 */
