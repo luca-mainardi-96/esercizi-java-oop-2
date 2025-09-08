@@ -2,13 +2,18 @@ package Esercizio_4;
 
 public class Macchina {
 
-    public Macchina(){
+    private String marca;
+    private String modello;
+    private Motore motore;
 
+    public Macchina(String marca, String modello){
+        this.marca = marca;
+        this.modello = modello;
     }
 
     public void parti(){
-        Motore a1 = new Motore();
-        a1.accendi();
+        this.motore = new Motore("Marca motore");
+        this.motore.accendi();
     }
 
 }

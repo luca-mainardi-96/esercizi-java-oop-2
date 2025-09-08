@@ -2,7 +2,10 @@ package Esercizio_4;
 
 public class Motore {
 
-    public Motore(){
+    private String marca;
+
+    public Motore(String marca){
+        this.marca = marca;
     }
 
     public void accendi(){
