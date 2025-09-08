@@ -1,9 +1,11 @@
 package Esercizio_5;
 
+import java.time.LocalDate;
 public class Utente {
 
     private String nome;
     private String email;
+    private LocalDate dataNascita;
 
     public Utente(){
 
@@ -19,6 +21,11 @@ public class Utente {
         return this;
     }
 
+    public Utente setDataNascita (LocalDate dataNascita) {
+        this.dataNascita = dataNascita;
+        return this;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -27,9 +34,14 @@ public class Utente {
         return email;
     }
 
+    public LocalDate getDataNascita() {
+        return dataNascita;
+    }
+
     public void stampa(){
         System.out.println("Nome Utente: " + this.getNome());
         System.out.println("E-mail Utente: " + this.getEmail());
+        System.out.println("Data di nascita: " + this.getDataNascita());
     }
 
 }
